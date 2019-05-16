@@ -1,4 +1,20 @@
-# photo-album
+## how to run application 
+- open html file in browser
+- set cursor to bottom panel
+- type in command with added argument
+
+### commands
+- photo-album
+> ex. photo-album 3
+- greet
+
+
+
+
+
+
+
+## photo-album project description
 
 Create a console application that displays photo ids and titles in an album. The photos are available in this online web
 service (https://jsonplaceholder.typicode.com/photos).

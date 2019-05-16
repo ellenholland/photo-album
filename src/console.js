@@ -46,7 +46,7 @@ YUI().use("node", function(Y) {
                 var photoID = `${data[i].id}`;
                 var photoTitle = `${data[i].title}`;
                 console.log(data[i].title);
-                outputToConsole("[" + photoID + "] " + photoTitle);
+                outputToConsole("[" + photoID + "] " + photoTitle+ "<br>");
             }
         })
     }
