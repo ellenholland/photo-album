@@ -61,9 +61,10 @@
 
                         $.getJSON('https://jsonplaceholder.typicode.com/photos?albumId=' + args[0], function(data) {
                             for(var i=0; i < data.length; i++){
-                                var text = `${data[i].title}`;
+                                var photoID = `${data[i].id}`;
+                                var photoTitle = `${data[i].title}`;
                                 console.log(data[i].title);
-                                outputToConsole( text);
+                                outputToConsole("[" + photoID + "] " + photoTitle);
                             }
                         })
                     }
