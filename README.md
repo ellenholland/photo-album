@@ -1,4 +1,5 @@
 ## how to run application 
+- download photo-album project from https://github.com/ellenholland/photo-album
 - open html file in browser
 - set cursor to bottom panel
 - type in command with added argument
