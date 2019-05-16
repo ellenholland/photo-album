@@ -3,70 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <title>hello</title>
-        <script>
 
-            var getJSON = function(url, callback) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', url, true);
-                xhr.responseType = 'json';
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
 
-                xhr.onload = function() {
-                  var status = xhr.status;
-                  if (status === 200) {
-                    callback(null, xhr.response);
-                  } else {
-                    callback(status, xhr.response);
-                  }
-                };
-                xhr.send();
+        $.getJSON('https://jsonplaceholder.typicode.com/photos', function(data) {
 
-            };
+            //var text = `Date: ${data.date}<br>
+            //       Time: ${data.time}<br>
+            //       Unix time: ${data.milliseconds_since_epoch}`
+            console.log(data);
+            console.log(data[0]);
+            var text = `${data[0].albumId}`;
+            $(".mypanel").html(text);
+        });
 
+        function myJsFunction(){
+        var text = document.getElementById('input1').value;
+        console.log(text);
 
-            getJSON('https://jsonplaceholder.typicode.com/photos', function(err, data) {
-              if (err !== null) {
-                alert('Something went wrong: ' + err);
-              } else {
-                alert('Your query count: ' + data[0].title);
-              }
-              console.log(data);
-            });
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.5.0/build/cssreset/cssreset-min.css"/>
+    <style type="text/css">
+            html {
+                background-color: #000;
+                }
+            body {
+                font-family: "Lucida Console";
+                font-size: 13px;
+                color: #0f0;
+                }
+            #in {
+                display: block;
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 8px;
+                border-color: #fff;
+                border-width: 1px 0 0 0;
+                background-color: #000;
+                color: #0f0;
+                }
+        </style>
+</head>
+<body>
+    <div id="out"></div>
+    <input id="in" tabindex="0"/>
+</body>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.5.0/build/yui/yui-min.js"></script>
+    <script type="text/javascript">
+        YUI().use("node", function(Y) {
 
+            var COMMANDS = [
+                {
+                    name: "do_stuff",
+                    handler: doStuff
+                },
 
-            function getJSONP(url, success) {
+                {
+                    name: "greet",
+                    handler: function(args) {
+                        outputToConsole("Hello " + args[0] + ", welcome to Console.");
+                    }
+                }
+            ];
 
-                var ud = '_' + +new Date,
-                    script = document.createElement('script'),
-                    head = document.getElementsByTagName('head')[0]
-                           || document.documentElement;
+            function processCommand() {
+                var inField = Y.one("#in");
+                var input = inField.get("value");
+                var parts = input.replace(/\s+/g, " ").split(" ");
+                var command = parts[0];
+                var args = parts.length > 1 ? parts.slice(1, parts.length) : [];
 
-                window[ud] = function(data) {
-                    head.removeChild(script);
-                    success && success(data);
-                };
+                inField.set("value", "");
 
-                script.src = url.replace('callback=?', 'callback=' + ud);
-                head.appendChild(script);
+                for (var i = 0; i < COMMANDS.length; i++) {
+                    if (command === COMMANDS[i].name) {
+                        COMMANDS[i].handler(args);
+                        return;
+                    }
+                }
 
+                outputToConsole("Unsupported Command: " + command);
             }
 
-            getJSONP('https://jsonplaceholder.typicode.com/photos', function(data){
-                console.log(data);
+            function doStuff(args) {
+                outputToConsole("I'll just echo the args: " + args);
+            }
+
+            function outputToConsole(text) {
+                var p = Y.Node.create("<p>" + text + "</p>");
+                Y.one("#out").append(p);
+                p.scrollIntoView();
+            }
+
+            Y.on("domready", function(e) {
+                Y.one("body").setStyle("paddingBottom", Y.one("#in").get("offsetHeight"));
+                Y.one("#in").on("keydown", function(e) {
+                    if (e.charCode === 13) {
+                        processCommand();
+                    }
+                });
             });
-        </script>
-</head>
-    <html>
-
-<body>
-
-<p>Before the script...</p>
-
-hello
-
-<p>...After the script.</p>
-
-</body>
-
-
-
+        });
+    </script>
 </html>
