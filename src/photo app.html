@@ -47,25 +47,12 @@
         var COMMANDS = [
             {
                 name: "photo-album",
-                handler: function(args) {
-
-                    $.getJSON('https://jsonplaceholder.typicode.com/photos?albumId=' + args[0], function(data) {
-                        outputToConsole("photo-album " + args[0]);
-                        for(var i=0; i < data.length; i++){
-                            var photoID = `${data[i].id}`;
-                            var photoTitle = `${data[i].title}`;
-                            console.log(data[i].title);
-                            outputToConsole("[" + photoID + "] " + photoTitle);
-                        }
-                    })
-                }
+                handler: getPhotoIdsTitles
             },
 
             {
                 name: "greet",
-                handler: function(args) {
-                    outputToConsole("Hello Lean TECHniques, welcome to my photo album console application!");
-                }
+                handler: helloLT
             }
         ];
 
@@ -88,10 +75,30 @@
             outputToConsole("Unsupported Command: " + command);
         }
 
-        function doStuff(args) {
-            outputToConsole("I'll just echo the args: " + args);
+        /////
+        // Command Functions
+        /////
+
+        function getPhotoIdsTitles(args) {
+
+            $.getJSON('https://jsonplaceholder.typicode.com/photos?albumId=' + args[0], function(data) {
+                outputToConsole("photo-album " + args[0]);
+                for(var i=0; i < data.length; i++){
+                    var photoID = `${data[i].id}`;
+                    var photoTitle = `${data[i].title}`;
+                    console.log(data[i].title);
+                    outputToConsole("[" + photoID + "] " + photoTitle);
+                }
+            })
         }
 
+        function helloLT() {
+            outputToConsole("Hello Lean TECHniques, welcome to my photo album console application!");
+        }
+
+        /////
+        // YUI Functions
+        /////
         function outputToConsole(text) {
             var p = Y.Node.create("<p>" + text + "</p>");
             Y.one("#out").append(p);
