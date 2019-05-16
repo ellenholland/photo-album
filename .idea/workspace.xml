@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766b42d4-efbd-42bd-b643-960239d6adb2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/console.js" afterPath="$PROJECT_DIR$/src/console.js" />
       <change beforePath="$PROJECT_DIR$/src/photo app.html" afterPath="$PROJECT_DIR$/src/photo app.html" />
-      <change beforePath="$PROJECT_DIR$/src/photo app.js" afterPath="$PROJECT_DIR$/src/console.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,28 +18,28 @@
       <file leaf-file-name="photo data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/photo data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="127704">
+              <caret line="7512" column="3" lean-forward="true" selection-start-line="7512" selection-start-column="3" selection-end-line="7512" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="console.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/console.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-630">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photo app.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photo app.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/photo app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="87" column="56" lean-forward="true" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
+            <state relative-caret-position="374">
+              <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -69,6 +68,7 @@
         <option value="$PROJECT_DIR$/src/photo data" />
         <option value="$PROJECT_DIR$/src/photo app.js" />
         <option value="$PROJECT_DIR$/src/photo app.html" />
+        <option value="$PROJECT_DIR$/src/console.js" />
       </list>
     </option>
   </component>
@@ -336,26 +336,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/photo data" />
     <entry file="file://$PROJECT_DIR$/src/photo data" />
+    <entry file="file://$PROJECT_DIR$/src/photo app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/photo data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="127704">
+          <caret line="7512" column="3" lean-forward="true" selection-start-line="7512" selection-start-column="3" selection-end-line="7512" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/console.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-630">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/photo app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="56" lean-forward="true" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
           <folding />
         </state>
       </provider>
