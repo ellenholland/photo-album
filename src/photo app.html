@@ -5,24 +5,6 @@
     <title>hello</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-
-        $.getJSON('https://jsonplaceholder.typicode.com/photos', function(data) {
-
-            //var text = `Date: ${data.date}<br>
-            //       Time: ${data.time}<br>
-            //       Unix time: ${data.milliseconds_since_epoch}`
-            console.log(data);
-            console.log(data[0]);
-            var text = `${data[0].albumId}`;
-            $(".mypanel").html(text);
-        });
-
-        function myJsFunction(){
-        var text = document.getElementById('input1').value;
-        console.log(text);
-
-    </script>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.5.0/build/cssreset/cssreset-min.css"/>
     <style type="text/css">
             html {
@@ -52,13 +34,39 @@
     <input id="in" tabindex="0"/>
 </body>
 <script type="text/javascript" src="http://yui.yahooapis.com/combo?3.5.0/build/yui/yui-min.js"></script>
-    <script type="text/javascript">
+</html>
+
+
+<script type="text/javascript">
+
+        $.getJSON('https://jsonplaceholder.typicode.com/photos', function(data) {
+
+            //var text = `Date: ${data.date}<br>
+            //       Time: ${data.time}<br>
+            //       Unix time: ${data.milliseconds_since_epoch}`
+            console.log(data);
+            console.log(data[0]);
+            var text = `${data[0].albumId}`;
+        });
+
+        /////
+        // Console YUI
+        /////
         YUI().use("node", function(Y) {
 
             var COMMANDS = [
                 {
-                    name: "do_stuff",
-                    handler: doStuff
+                    name: "photo-album",
+                    handler: function(args) {
+
+                        $.getJSON('https://jsonplaceholder.typicode.com/photos?albumId=' + args[0], function(data) {
+                            for(var i=0; i < data.length; i++){
+                                var text = `${data[i].title}`;
+                                console.log(data[i].title);
+                                outputToConsole( text);
+                            }
+                        })
+                    }
                 },
 
                 {
@@ -108,4 +116,3 @@
             });
         });
     </script>
-</html>
